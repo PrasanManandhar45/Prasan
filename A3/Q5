@@ -1,0 +1,26 @@
+'''Learner class'''
+
+class Learner:
+    def __init__(self, roll_no, full_name, address, year, program, group):
+        self.roll_no = roll_no
+        self.full_name = full_name
+        self.address = address
+        self.year = year
+        self.program = program
+        self.group = group
+
+    def display(self):
+        print(self.roll_no, self.full_name, self.address,
+              self.year, self.program, self.group)
+
+
+l = Learner(
+    input("Roll: "),
+    input("Name: "),
+    input("Address: "),
+    input("Year: "),
+    input("Program: "),
+    input("Group: ")
+)
+
+l.display()

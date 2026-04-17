@@ -1,0 +1,21 @@
+'''Copy content from one file to another with exception handling'''
+
+try:
+    src = input("Enter source file: ")
+    dest = input("Enter destination file: ")
+
+    # Check if source exists
+    with open(src, "r") as f1:
+        data = f1.read()
+
+    # Check if destination already exists
+    with open(dest, "x") as f2:
+        f2.write(data)
+
+    print("File copied successfully")
+
+except FileNotFoundError:
+    print("Error: Source file does not exist")
+
+except FileExistsError:
+    print("Error: Destination file already exists")

@@ -1,0 +1,16 @@
+'''Append user details to records.csv with confirmation'''
+
+import csv
+
+with open("records.csv", "a", newline="") as file:
+    writer = csv.writer(file)
+
+    name = input("Enter name: ")
+    roll = input("Enter roll no: ")
+    program = input("Enter program: ")
+    year = input("Enter year: ")
+    group = input("Enter group: ")
+
+    writer.writerow([name, roll, program, year, group])
+
+print("Record added successfully")

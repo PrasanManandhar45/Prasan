@@ -1,0 +1,41 @@
+'''Staff management with file handling'''
+
+import csv
+
+class Staff:
+    def __init__(self, emp_id, name, address, phone, status, dependents, salary):
+        self.emp_id = emp_id
+        self.name = name
+        self.address = address
+        self.phone = phone
+        self.status = status
+        self.dependents = dependents
+        self.salary = salary
+
+try:
+    staff_list = []
+
+    n = int(input("Number of staff: "))
+    for _ in range(n):
+        s = Staff(
+            input("ID: "),
+            input("Name: "),
+            input("Address: "),
+            input("Phone: "),
+            input("Marital Status: "),
+            input("Dependents: "),
+            input("Salary: ")
+        )
+        staff_list.append(s)
+
+    with open("staff.csv", "w", newline="") as file:
+        writer = csv.writer(file)
+        for s in staff_list:
+            writer.writerow([s.emp_id, s.name, s.address, s.phone,
+                             s.status, s.dependents, s.salary])
+
+    with open("staff.csv", "r") as file:
+        print(file.read())
+
+except Exception as e:
+    print("Error:", e)

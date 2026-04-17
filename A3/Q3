@@ -1,0 +1,36 @@
+'''Calculator operations and save to file'''
+
+from datetime import datetime
+
+filename = "results.txt"
+
+while True:
+    nums = list(map(int, input("Enter numbers: ").split()))
+    
+    add = sum(nums)
+    sub = nums[0]
+    mul = 1
+    
+    for n in nums[1:]:
+        sub -= n
+        
+    for n in nums:
+        mul *= n
+        
+    try:
+        div = nums[0]
+        for n in nums[1:]:
+            div /= n
+    except:
+        div = "Error"
+
+    with open(filename, "a") as f:
+        f.write(f"{datetime.now()} -> Add:{add}, Sub:{sub}, Mul:{mul}, Div:{div}\n")
+
+    choice = input("Continue? (y/n): ")
+    if choice.lower() == "n":
+        break
+
+with open(filename, "r") as f:
+    print("\nSaved Results:\n")
+    print(f.read())

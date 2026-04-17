@@ -1,0 +1,31 @@
+'''Dish and Cookbook classes'''
+
+class Dish:
+    def __init__(self, id, name, ingredients, instructions):
+        self.id = id
+        self.name = name
+        self.ingredients = ingredients
+        self.instructions = instructions
+
+
+class Cookbook:
+    def __init__(self):
+        self.dishes = []
+
+    def add_dish(self, dish):
+        self.dishes.append(dish)
+
+    def show_dishes(self):
+        for d in self.dishes:
+            print(d.id, d.name)
+
+
+cb = Cookbook()
+
+d1 = Dish(1, "Rice", "Rice, Water", "Boil")
+cb.add_dish(d1)
+
+d2 = Dish(2, "Dal", "Lentils, Water", "Cook")
+cb.add_dish(d2)
+
+cb.show_dishes()
