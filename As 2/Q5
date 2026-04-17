@@ -1,0 +1,5 @@
+def reverse_sort_names(names):
+    return sorted(names, reverse=True)
+
+names = ["Ram", "Shyam", "Hari", "Sita"]
+print(reverse_sort_names(names))

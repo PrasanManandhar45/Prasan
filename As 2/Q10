@@ -1,0 +1,13 @@
+import random
+
+dice = random.randint(1, 6)
+guess = int(input("Guess (1-6): "))
+
+print("Dice:", dice)
+
+if guess == dice:
+    print(" Correct!")
+elif abs(guess - dice) == 1:
+    print(" Close!")
+else:
+    print(" Wrong!")

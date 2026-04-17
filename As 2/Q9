@@ -1,0 +1,20 @@
+movies = {}
+
+for i in range(3):
+    print(f"Enter details for movie {i+1}")
+    title = input("Title: ")
+    director = input("Director: ")
+    year = input("Year: ")
+    rating = input("Rating: ")
+
+    movies[title] = {
+        "Director": director,
+        "Year": year,
+        "Rating": rating
+    }
+
+for title, details in movies.items():
+    print("\nTitle:", title)
+    for key, value in details.items():
+        print(key + ":", value)
+        

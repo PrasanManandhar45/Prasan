@@ -1,0 +1,9 @@
+def find_country(countries, search):
+    if search in countries:
+        return countries.index(search)
+    else:
+        return "Not Found in List"
+
+countries = ["Nepal", "India", "China", "USA"]
+search = input("Enter country: ")
+print(find_country(countries, search))

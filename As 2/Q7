@@ -1,0 +1,9 @@
+def key_value(sentence):
+    freq = {}
+    for char in sentence:
+        if char != " ":
+            freq[char] = freq.get(char, 0) + 1
+    return freq
+
+sentence = input("Enter a sentence: ")
+print(key_value(sentence))
