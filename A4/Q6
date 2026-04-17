@@ -1,0 +1,28 @@
+'''Add BMI and Health_Status columns'''
+
+import pandas as pd
+
+df = pd.read_csv("health_data.csv")
+
+# BMI calculation
+df["BMI"] = df["weight"] / (df["height"] ** 2)
+
+# Health status function
+def get_status(bmi):
+    if bmi < 18.5:
+        return "Underweight"
+    elif bmi <= 24.9:
+        return "Healthy"
+    elif bmi <= 29.9:
+        return "Overweight"
+    elif bmi <= 34.9:
+        return "High Risk"
+    else:
+        return "Critical"
+
+df["Health_Status"] = df["BMI"].apply(get_status)
+
+print(df.head())
+
+# Save updated file
+df.to_csv("updated_health_data.csv", index=False)

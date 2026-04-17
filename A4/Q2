@@ -1,0 +1,10 @@
+'''Sort list and perform slicing'''
+
+nums = list(map(int, input("Enter at least 12 numbers: ").split()))
+
+nums.sort()
+print("Sorted list:", nums)
+
+print("Index 3–6:", nums[3:7])
+print("Index 6–9:", nums[6:10])
+print("Index 4–10:", nums[4:11])

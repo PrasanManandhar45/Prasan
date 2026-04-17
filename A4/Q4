@@ -1,0 +1,28 @@
+'''Matrix operations using NumPy'''
+
+import numpy as np
+
+try:
+    r1 = int(input("Rows of matrix A: "))
+    c1 = int(input("Cols of matrix A: "))
+    A = np.array([list(map(int, input().split())) for _ in range(r1)])
+
+    r2 = int(input("Rows of matrix B: "))
+    c2 = int(input("Cols of matrix B: "))
+    B = np.array([list(map(int, input().split())) for _ in range(r2)])
+
+    # Addition & Subtraction
+    if A.shape == B.shape:
+        print("Addition:\n", A + B)
+        print("Subtraction:\n", A - B)
+    else:
+        print("Addition/Subtraction not possible")
+
+    # Multiplication
+    if c1 == r2:
+        print("Multiplication:\n", np.dot(A, B))
+    else:
+        print("Multiplication not possible")
+
+except Exception as e:
+    print("Error:", e)
